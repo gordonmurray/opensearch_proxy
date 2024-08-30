@@ -1,11 +1,26 @@
 # Simple Opensearch proxy
 A proxy to sit between an application an AWS Opensearch domain to log queries submitted to OpenSearch for debugging
 
+## System Architecture
+
+```mermaid
+graph LR
+    A[Application] -->|Queries| B(Python Proxy)
+    B -->|Forwards Queries| C[OpenSearch]
+    C -->|Returns Results| B
+    B -->|Returns Results| A
+    B -->|Logs Queries| D[(Log File)]
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#fdb,stroke:#333,stroke-width:2px
+```
+
 ## Using the proxy
 
 Some commands to try out the proxy are below. The commands will be logged in a file as well as passed on to the actual Elasticsearch cluster as normal.
 
-Use:
+Use the following to start the proxy and an Elasticsearch cluster:
 
 ```
 docker compose up -d
