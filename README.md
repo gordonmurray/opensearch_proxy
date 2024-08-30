@@ -1,9 +1,9 @@
 # Simple Opensearch proxy
-A proxy to sit between an application an AWS Opensearch domain to log queries subnitted to OpenSearch for debugging
+A proxy to sit between an application an AWS Opensearch domain to log queries submitted to OpenSearch for debugging
 
 ## Using the proxy
 
-Some commands to try out the proxy, the commands will be logged in a file as well as passed on to the actual Elasticsearch cluster.
+Some commands to try out the proxy are below. The commands will be logged in a file as well as passed on to the actual Elasticsearch cluster as normal.
 
 Use:
 
